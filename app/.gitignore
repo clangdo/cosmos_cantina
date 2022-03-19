@@ -1,0 +1,16 @@
+# This file is adapted from:
+#   https://github.com/github/gitignore/blob/752b7678db497edb377fa982ded0c70035393794/Python.gitignore
+# The referenced file is in the public domain (under CC-0)
+#   along with all other gitignores in the referenced repository.
+# Date accessed: Mon 10 Jan 2022
+# The contents are general purpose so I have adapted the file by trimming down to what I need.
+
+# While these may not all be necessary they are fairly basic so I have included them
+__pycache__/
+*.py[cod]
+*.py.class
+
+config.py
+
+# All of my venv environments are called env
+env/

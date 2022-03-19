@@ -1,0 +1,74 @@
+<form method="POST">
+  <fieldset>
+  {% for field in form.fields %}
+    <label
+      for="input_{{ field.key }}"
+      {% if field.required %}
+        class="required"
+      {% endif %}
+    >
+      {{ field.name }}
+    </label>
+    {% if field.options is not none %}
+      <select
+        id="input_{{ field.key }}"
+        name="{{ field.key }}"
+        type="{{ field.input_type }}"
+        placeholder="{{ field.name }}"
+        {% if field.disabled %}
+          disabled="true"
+        {% endif %}
+      >
+      {% for option in field.options %}
+        <option value="{{ option[0] }}"
+        {% if field.prefill and field.prefill == option[0] %}
+          selected
+        {% endif %}
+        >{{ option[1] }}</option>
+      {% endfor %}
+      </select>
+    {% else %}
+      <input
+        id="input_{{ field.key }}"
+        name="{{ field.key }}"
+        type="{{ field.input_type }}"
+        placeholder="{{ field.name }}"
+
+        {% if field.required %}
+          required="true"
+        {% endif %}
+        
+        {% if field.input_type == 'checkbox' and field.prefill %}
+          checked="true"
+        {% endif %}
+        
+        {% if field.input_type != 'checkbox' %}
+          value="{{ field.prefill }}"
+        {% endif %}
+
+        {% if field.db_type == 'DECIMAL' or field.db_type == 'NEWDECIMAL' %}
+          step="0.01"
+        {% endif %}
+
+        {% if field.input_type == 'number' %}
+          min="0"
+        {% endif %}
+
+        {# All of our numbers must be positive #}
+        {% if field.input_type == 'datetime-local' %}
+          step="1"
+        {% endif %}
+
+        {% if field.disabled %}
+          disabled="true"
+        {% endif %}
+      />
+    {% endif %}
+  {% endfor %}
+  </fieldset>
+  <div class="rule"></div>
+  <fieldset>
+    <a href="{{ form.cancel_url }}" class="button cancel-button">{{ form.cancel_text }}</a>
+    <input type="submit" value="{{ form.submit_text }}" class="button submit-button" />
+  </fieldset>
+</form>

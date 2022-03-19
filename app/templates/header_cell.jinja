@@ -1,0 +1,18 @@
+<th>
+  <div class="header-cell-container">
+    <span>{{ localname }}</span>
+    {% if options is defined %}
+        <input form="filter-form"
+               type="search"
+               name="{{ name }}"
+               list="filter-options-{{ name }}"
+               placeholder="Filter by {{ localname }}"
+        />
+      <datalist id="filter-options-{{ name }}">
+        {% for option in options %}
+          <option value={{ option }}>{{ option }}</option>
+        {% endfor %}
+      </datalist>
+    {% endif %}
+  </div>
+</th>

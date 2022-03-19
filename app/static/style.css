@@ -1,0 +1,364 @@
+/* The following line is from google fonts' usage helper
+ * Go here: https://fonts.google.com/specimen/Nunito 
+ * And click on the "Medium 500" "Select this style" 
+ * button to show */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+:root {
+  --bg-color-main: #333;
+  --fg-color-main: #CCC;
+  --bg-color-light: #444;
+  --fg-color-light: #DDD;
+  --bg-color-dark: #222;
+  --fg-color-dark: #999;
+  --bg-color-header: #A22;
+  --fg-color-header: #DDD;
+  --fg-color-highlight: #FC6;
+  --bg-color-footer: #555;
+  --fg-color-footer: #CCC;
+
+  --color-commit: #8F8;
+  --color-commit-dark: #5C5;
+  --color-read: #FBF;
+  --color-read-dark: #CCC;
+  --color-edit: #8CF;
+  --color-edit-dark: #4AE;
+  --color-delete: #F88;
+  --color-delete-dark: #D88;
+  --color-link: #FC6;
+  --color-link-visited: #A93;
+  --color-error: #F88;
+
+  --color-border-main: #AAA;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--bg-color-main);
+  color: var(--fg-color-main);
+  
+  /* The following line is also from google fonts, just like the
+   * import statement above. */
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: start;
+}
+
+:focus {
+  color: var(--fg-color-highlight);
+  border-color: var(--fg-color-highlight);
+  outline: 4px solid var(--fg-color-highlight);
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  max-width: 50%;
+  margin: 1rem auto;
+  border: 0.2rem solid var(--color-border-main);
+  overflow-x: auto;
+}
+
+nav#pager {
+  grid-template-columns: 11em auto 11em;
+}
+
+ul.navlist {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+}
+
+ul.navlist>li {
+  margin: 0;
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+}
+
+article {
+  flex-grow: 1;
+}
+
+footer {
+  width: 100%;
+  flex-shrink: 1;
+  background-color: var(--bg-color-footer);
+  color: var(--fg-color-footer);
+  display: flex;
+  justify-content: space-between;
+}
+
+.smallpad {
+  padding: 0.5rem;
+}
+
+ul.unadorned {
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul.unadorned {
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul.column {
+  flex-direction: column;
+}
+
+footer li {
+  margin: 0 1rem;
+}
+
+footer h4 {
+  margin: 0.5rem 0;
+}
+
+table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-color-footer); 
+}
+
+th, td {
+  padding: 0.25rem;
+}
+
+td {
+  border-width: 0.1rem 0;
+  border-style: solid;
+  border-color: var(--color-border-main);
+}
+
+th {
+  background-color: var(--bg-color-light);
+  color: var(--fg-color-light);
+  border-width: 0.2rem 0;
+  border-style: solid;
+  border-color: var(--color-border-main);
+}
+
+form {
+  margin: 1rem;
+  padding: 1rem;
+  border: 0.2rem solid var(--color-border-main);
+  max-width: 60%;
+  display: grid;
+}
+
+input[type="datetime-local"] {
+  min-width: 11rem;
+}
+
+
+
+.header-cell-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+form.tinyform {
+  border: none;
+  margin: 0;
+  padding: 0.2rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset>* {
+  margin: 0.5rem;
+  background-color: var(--bg-color-light);
+  color: var(--fg-color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+input, select {
+  background-color: var(--bg-color-light);
+  color: var(--fg-color-light);
+  border: 0.1rem solid var(--fg-color-light);
+  padding: 0.5rem;
+}
+
+label {
+  padding: 0.5rem;
+}
+
+label.required {
+  text-decoration: underline;
+}
+
+input:disabled, select:disabled {
+  border: 0.1rem solid var(--fg-color-dark);
+  background-color: var(--bg-color-dark);
+  color: var(--fg-color-dark);
+}
+
+button.button {
+    button-style-type: none;
+}
+
+.button {
+  padding: 0.7rem;
+  margin: 0.5rem;
+  border-width: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid var(--fg-color-light);
+  text-decoration: none;
+  color: var(--fg-color-main);
+  background-color: var(--bg-color-main);
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.button:visited {
+  color: inherit;
+}
+
+.submit-button, .create-button, .create-button:visited {
+  border-color: var(--color-commit-dark);
+  color: var(--color-commit-dark);
+}
+
+.edit-button, .edit-button:visited {
+  color: var(--color-edit-dark);
+  border-color: var(--color-edit-dark);
+}
+
+.delete-button, .delete-button:visited {
+  color: var(--color-delete-dark);
+  border-color: var(--color-delete-dark);
+}
+
+.read-button, .read-button:visited {
+  color: var(--color-read);
+  border-color: var(--color-read);
+}
+
+.button:focus {
+  color: var(--fg-color-highlight);
+  border-color: var(--fg-color-highlight);
+}
+
+.button:hover {
+  color: var(--fg-color-highlight);
+  border-color: var(--fg-color-highlight);
+}
+
+.button:disabled {
+  color: var(--fg-color-dark);
+  border-color: var(--fg-color-dark);
+}
+
+.submit-button:hover {
+  color: var(--color-commit);
+  border-color: var(--color-commit);
+}
+
+.submit-button:focus {
+  outline-color: var(--color-commit);
+  color: var(--color-commit);
+  border-color: var(--color-commit);
+}
+
+.rule {
+  height: 0.2rem;
+  background-color: var(--bg-color-light);
+  margin: 0.5rem;
+}
+
+.row-controls-container {
+  display: flex;
+  justify-content: center;
+}
+
+.paragrapher {
+  max-width: 50em;
+  text-align: left;
+}
+
+.error {
+  font-weight: bold;
+  color: var(--color-error);
+}
+
+.read {
+  color: var(--color-read);
+  border-color: var(--color-read);
+}
+
+.create {
+  color: var(--color-commit);
+  border-color: var(--color-commit);
+}
+
+.edit {
+  color: var(--color-edit);
+  border-color: var(--color-edit);
+}
+
+.delete {
+  color: var(--color-delete);
+  border-color: var(--color-delete);
+}
+
+.welcome-logo {
+  margin: 1rem;
+  max-height: 10rem;
+}

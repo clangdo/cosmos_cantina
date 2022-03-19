@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "head.jinja" %}
+  </head>
+  <body>
+    {% if navlinks is defined %}
+      <nav>
+        {% include "navigation.jinja" %}
+      </nav>
+    {% endif %}
+    <h1
+      {% if error %}
+        class="error"
+      {% endif %}
+    >{{ title }}</h1>
+    <main id="content">
+      {% if content is not none %}
+        {{ content }}
+      {% endif %}
+    </main>
+    <footer>
+      {% include "footer.jinja" %}
+    </footer>
+  </body>
+</html>

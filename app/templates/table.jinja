@@ -1,0 +1,26 @@
+{% include "pager.jinja" %}
+<table>
+  <caption hidden="true">
+    See page title.
+  </caption>
+  <thead>
+  <tr>
+    {% for cell in header %}
+      {{ cell }}
+    {% endfor %}
+  </tr>
+  </thead>
+  <tbody>
+  {% for tuple in rows %}
+    <tr>
+      {% for attribute in tuple %}
+        <td>
+          {{ attribute }}
+        </td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% set nofilterform = true %}
+{% include "pager.jinja" %}

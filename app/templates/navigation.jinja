@@ -1,0 +1,7 @@
+{% for link in navlinks.view_links %}  
+  <a class="button read-button" href={{ link.url }}>{{ link.name }}</a>
+{% endfor %}
+
+{% for link in navlinks.create_links %}  
+  <a class="button create-button" href={{ link.url }}>{{ link.name }}</a>
+{% endfor %}

@@ -1,0 +1,21 @@
+# If DB_UNIX_SOCKET is set DB_HOST and DB_PORT will be ignored
+# and the app will connect to the database on a unix socket
+DB_UNIX_SOCKET=None
+DB_USER='username'
+DB_PASSWORD='secretpassword123'
+DB_DATABASE='database_name'
+DB_HOST='127.0.0.1'
+DB_PORT='3306'
+
+# Change this to 'development' if you want the built-in INSECURE
+# debugger for local development. Keep this as 'production' if you
+# don't trust every single line of code that could conceivably access
+# the server to run arbitrary code on your machine, and while you're
+# at it, don't run the flask development server on an untrusted
+# network at all, use a real WSGI server instead. Even if you use such
+# a server, you MUST KEEP this set to 'production' while running the
+# app in a production environment to remain secure!
+ENV='production'
+
+# For security, set this as low as you can manage.
+MAX_CONTENT_LENGTH=1024

@@ -1,0 +1,9 @@
+<div class="row-controls-container">
+  {% if extra_buttons is not none %}
+    {% for link in extra_buttons %}
+      <a class="{{link.classes}}" href="{{link.url + link_suffix}}">{{link.name}}</a>
+    {% endfor %}
+  {% endif %}
+  <a class="button edit-button" href="/{{link_prefix}}/edit/{{link_suffix}}">Edit</a>
+  <a class="button delete-button" href="/{{link_prefix}}/delete/{{link_suffix}}">Delete</a>
+</div>

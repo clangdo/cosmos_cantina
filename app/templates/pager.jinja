@@ -1,0 +1,19 @@
+<nav id="pager">
+  {% if prev_url is none %}
+    <button class="button" disabled="true">No Previous Page</button>
+  {% else %}
+    <a class="button" href="{{ prev_url }}">← Previous Page</a>
+  {% endif %}
+  {% if nofilterform is defined %}
+    <div></div>
+  {% else %}
+  <form id="filter-form" class="tinyform" method="get" enctype="application/x-www-form-urlencoded">
+    <input class="button" type="submit" value="Apply Filters">
+  </form>
+  {% endif %}
+  {% if next_url is none %}
+    <button class="button" disabled="true">No Next Page</button>
+  {% else %}
+    <a class="button" href="{{ next_url }}">Next Page →</a>
+  {% endif %}
+</nav>
