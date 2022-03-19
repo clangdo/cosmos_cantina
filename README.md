@@ -1,4 +1,8 @@
 # Cosmo's Cantina
+
+**IMPORTANT SECURITY INFORMATION** This project was created for a university course and it lacks any kind of authentication. If you intend to run it please note that it is totally unsecure. We also use home grown validation and sanitization which should NOT be relied upon. If you're looking for a production ready database solution for your bar *this is NOT it*, please don't even attempt to set this up if you don't know what you're doing.
+
+
 Welcome to the Andromeda Galaxy's premier establishment. This is where the finest drinks are sorted, indexed and inventoried.
 
 ## Using
